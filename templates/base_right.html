@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% load blog_tags static %}
-
+{% load humanize %}
 
 {% block right %}
         <aside class="sidebar">
@@ -37,7 +37,7 @@
                         </a>
 
 
- <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=mail@liabeha.com" rel="external nofollow" title="Email" target="_blank"><i class="rss fa fa-envelope-o"></i></a>
+ <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=liabeha@163.com" rel="external nofollow" title="Email" target="_blank"><i class="rss fa fa-envelope-o"></i></a>
                   <a href="https://steamcommunity.com/id/1964420208/" rel="external nofollow" target="_blank" title="Steam"><i class="twitter fa fa-steam"></i></a>
 
 
@@ -175,3 +175,6 @@
             </div>
         </aside>
 {% endblock right %}
+
+{% block end_file %}
+{% endblock end_file %}

@@ -159,3 +159,6 @@ def change_profile_view(request):
         form = ProfileForm(instance=request.user)
     return render(request, 'oauth/change_profile.html', context={'form': form})
 
+
+def publish_view(request):
+    return render(request, 'oauth/publish.html')

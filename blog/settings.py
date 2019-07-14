@@ -27,7 +27,7 @@ SECRET_KEY = 'rhis)#7e-ac6kbf4y$tzj5ad$6c=ct52v=s7s0$37tnuorrtme'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['129.211.73.104']
+ALLOWED_HOSTS = ['129.211.73.104', '127.0.0.1']
 
 # Application definition
 
@@ -40,6 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
     'django.contrib.humanize',  # 添加人性化过滤器
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.baidu',
+
     'storm',    # 博客应用
     'user',     # 自定义用户应用
     'comment',  # 评论
@@ -51,7 +56,9 @@ INSTALLED_APPS = [
     'ckeditor',  # 富文本编辑器
     'ckeditor_uploader',  # 富文本编辑器上传图片模块
       # 监控
+        'django.contrib.sites',
 ]
+SITE_ID = 1
 
 # STATICFILES_FINDERS = ('django.contrib.staticfiles.finders.AppDirectoriesFinder',)
 
@@ -144,12 +151,12 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 
 # 静态文件收集
+
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/ubuntu/blog/nginx/static'  # os.path.join(BASE_DIR, 'nginx/static')   # 收集静态文件目录
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'start')   # 收集静态文件目录
-
 # 媒体文件收集
 MEDIA_URL = "/media/"   # 媒体文件别名(相对路径) 和 绝对路径
 MEDIA_ROOT = (os.path.join(BASE_DIR, 'media'))

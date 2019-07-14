@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^register/$', register_view, name='register'),
     url(r'^profile/$', profile_view, name='profile'),
     url(r'^profile/change/$', change_profile_view, name='change_profile'),
+        url(r'^publish/$', publish_view, name='publish'),
 ]

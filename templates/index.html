@@ -1,5 +1,5 @@
-﻿{%extends 'base_right.html'%}
-{% load blog_tags static comment_tags%}
+﻿{% extends 'base_right.html' %}
+{% load blog_tags static comment_tags %}
 
 {% block title %}个人博客{% endblock title %}
 {% block description %}
@@ -8,7 +8,7 @@
 {% block keywords %}
 <meta name="keywords" content="Python,Django,静觅,网络,IT,技术,博客,个人博客"/>
 {% endblock keywords %}
-{% block body%}
+{% block body %}
     <div class="content-wrap">
         <div class="content">
             <div id="wowslider-container1">
@@ -43,7 +43,7 @@
                 <div class="hot-posts">
                     <h2 class="title">热门排行</h2>
                     <ul>
-                        {% get_article_list 'views' 5 as hot_article %}
+                        {% get_article_list 'loves' 5 as hot_article %}
                             {% for hot in hot_article %}
                             <li>
                                 <p><span class="muted">
@@ -76,7 +76,7 @@
                     <span class="muted"><i class="fa fa-clock-o"></i> {{ article.create_date|date:'Y-m-d' }}</span>
                     <span class="muted"><i class="fa fa-eye"></i> {{ article.views }}浏览</span>
                     <span class="muted"><i class="fa fa-comments-o"></i>
-                        <a target="_blank" href="/article/{{ article.slug }}#comments">{% get_comment_count article.id  article.id%}评论</a>
+                        <a target="_blank" href="/article/{{ article.slug }}#comments">{% get_comment_count article.id  article.id %}评论</a>
                     </span>
                     <span class="muted"><a href="javascript:;" data-action="ding" data-id="{{ article.id }}" id="Addlike" class="action">
                         <i class="fa fa-heart-o"></i><span class="count">{{ article.loves }}</span>喜欢</a>
