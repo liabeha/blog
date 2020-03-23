@@ -62,7 +62,7 @@ rsa==4.0
 six==1.11.0
 sqlparse==0.3.0
 tablib==0.13.0
-urllib3==1.22
+urllib3==1.24.2
 user-agent==0.1.9
 webencodings==0.5.1
 Whoosh==2.7.4
